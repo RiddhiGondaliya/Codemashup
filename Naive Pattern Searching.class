@@ -1,0 +1,40 @@
+
+/* I/P  :  "ABABABCD"
+   pattern  : "ABAB"
+
+   O/P  :  0,2
+
+   I/P  :  "AAAAA"
+   pattern : "AAA"
+
+   O/P   :  0,1,2
+
+
+Expalination : 
+ ABCABCD   -> count index of input 
+  n = 7
+  ABCD      -> count index of the pattern 
+  m = 4
+  */
+
+  void patternSeraching(String txt, String petn)
+  {
+      int m = petn.length(),n = txt.length();
+        for(int i =0; i<=n - m; i++){
+
+            for(int j = 0; j< m; j++)
+                if(petn.charAt(j) ! = txt.charAt(i+j))
+                 break;
+
+                 if(j == m)
+                 System.out.rintln( i+" ");
+        }
+
+  // time complexity of this code is big O((n-m+1)*m)
+  // auxiliary space  big o(1)
+  }
+
+
+ 
+              
+
