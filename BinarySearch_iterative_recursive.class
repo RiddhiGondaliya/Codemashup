@@ -1,0 +1,67 @@
+/*
+in binery serach, its already sorted. we have o find the element is present i the sorted list or not. if its present then we 
+return value and if its not present then we return -1
+For example
+
+I/P :  arr[]  = {10,20,30,40,50}
+        X = 20;
+O/P : 1   -> return index of an element
+
+I/P : arr[] = {10,15,20,25}
+       x = 5
+O/P :  -1
+
+Logic :
+
+step1 : first compute mid point of the list  
+compute mid = [low+high/2]
+case 1:  (arr[mid] == x)
+
+case 2 : (arr[mid] > x)
+
+case 3: (arr[mid] < x)
+
+*/  
+
+//Solution : iterative
+
+int binSearch(int arr[], int n, int x){
+    int low =0; high =n-1;
+
+    while(low < = high){
+        int mid = (low+high)/2 ;
+
+        if(arr[mid] == x){
+            return mid;
+
+            else if(arr[mid] > x)
+            high = mid-1;
+
+            else
+            low = mid +1 ;
+        }
+    }
+
+}
+// Recursive solution
+  (
+int binSearch(int arr[], int low, int high, int x){
+
+    if(low > high)  return -1;
+  
+    int mid = (low+high)/2;
+
+    if(arr[mid] == x)
+     return mid;
+    else if(arr[mid] > x)
+     return  binSearch(arr, low, mid-1 , x);
+    else  
+     return  binSearch(arr, low, mid+1, x);
+
+}
+
+
+// time complexity is big O(log n)
+
+
+
