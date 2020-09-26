@@ -25,3 +25,36 @@ O/P : arrp[] = {1,3,0,0,2}
         }
 
  }
+
+ /*Genral problem solution
+
+ k(range) = 5, n = 6
+ arr[] ={1,4,4,1,0,1}
+ count[] ={1,3,0,0,2}
+
+ void countSort(arr, k, n){
+        for(int i=0; i < k; i++)
+        count[i] = 0;
+        for(int i=0; i < n; i++)
+        countarr[i]++;
+
+        for(int i=0; i< k; i++)
+        count[i] = count[i-1]+count[i];
+
+
+        int output[n];
+        for(int i = n-1 ; i >=0; i++)
+        count[i] = count[i-1]+count[i];
+        count[arr[i]]--;
+
+        for(int i=0; i<n ; i++)
+        arr[i] = output[i];
+ }
+ Important points:
+
+ not a comparision based algorithm
+
+ theta(n+k) Time
+ theta(n+k) Aux space
+ stable
+ used as a subroutine in a radix sort
