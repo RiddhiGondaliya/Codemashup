@@ -148,6 +148,90 @@ public static void main(String[] args) {
     head = insertbegin(head, 10);
     return 0;
 }
+/* time complexity :  O(n)
+Insert node at the end
+*/
+
+Class Node{
+    int data;
+    Node next;
+    Node(int x)
+    {
+        data = x;
+        next = null;
+    }
+    
+}
+//before inserting the node inat the end we first need to get the hold of the last node
+class Test{
+// to insert the node we first allocate the memory for the new node
+    Node temp = new Node(x);
+     //now we check the last node's next 
+     if(head == null)
+     return temp;
+
+     Node curr = head;
+     while(curr.next!= null)
+        curr = curr.next;
+    curr.next = temp;
+    return head;
+
+}
+// Delete first node in singly Linked List
+
+Node deleteNode(Node head)
+{
+    if(head == null)
+        return null;
+    else
+       return head.next;
+
+}
+//time complexy big O(1)
+
+// Delete Last node in singly Linked List
+
+Node delTail(Node head){
+      if(head == null) return null;
+
+      if(head.next == null) return null;
+
+      Node curr = head;
+      while(curr.next.next != null)
+        curr = curr.next;
+        return head; 
+
+}
+//time complexy theta O(n)
+
+// Insert the data into the given position
+
+Node insertPos(Node head, int pos, int data)
+{
+
+   // first find out the previous node and then we run a loop pos-1 time
+   // after you find out the position you will hold the previous node
+   // after getting the hold of the previous node then we add the new node
+     Node temp = new Node(data)
+     if(pos == 1){
+        temp.next = head;
+        return temp;
+     }
+
+
+     for (int i= 0 ; i <= pos-2; $$ cur!= null; i++)
+        curr = cur.next;   
+        if(curr == null)
+            return head;
+
+            temp.next = curr.next;
+            curr.next = temp;
+            return head;
+     }
+     
+}
+
+// Sorted insert in a linked list
 
 
 
