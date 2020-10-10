@@ -233,6 +233,100 @@ Node insertPos(Node head, int pos, int data)
 
 // Sorted insert in a linked list
 
+Node sortInseart(Node head , int x)
+{
+    Node temp = new Node(x);
+    if(head == null)
+        return temp;
+    
+        if(x< head.data)
+        {
+            temp.next = head;
+            retun temp;
+        }
+
+        Node curr = head;
+        while(curr.next != null && curr.next.data < x){
+            curr = curr.next;
+            temp.next = curr.next;
+            curr.next = temp;
+
+            retun head;
+            
+        }
+}
+
+/* time complexity of the sorted insert is depends in the position for exmple theta(pos)
+
+find the middle of the Linked list 
+
+Naive Solution
+
+step 1 : first we find the count of the  node
+
+step 2: then we run the loop from count 0 to count/2
+
+*/
+
+void printMiddle(Node head)
+{
+    if(head == null) return;
+    int count = 0;
+
+    // this solution require two traversal 
+    Node curr;
+    for(curr = head; curr!= null; curr = curr.next)
+        count++;
+
+        for(int i =0 ; i< count/2; i++)
+        curr = curr.next;
+        System.out.println(curr.data);
+}
+/* Efficient solution:
+
+two pointers : slow(one node at a time) and fast(two mnode at a time)
+we stop the run when fast node reach to null 
+this is one travarsal solution */ 
+
+void printMiddle(Node head){
+    if(head == null) return;
+
+    Node slow = head, fast = head;
+    while(fast!= null $$ fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    System.out.println(slow.data)//we get the middle node of linked list
+}
+
+/* find the nth Node from end of Linked List
+
+step 1: first count the numbers of node into Linked List
+*/
+
+void printnthfroEnd(Node head){
+    int len =0;
+
+    for(Node curr = head ; curr!= null; curr = curr.next){
+        len++;
+        if(len < n) 
+        return;
+
+        Node curr = head;
+
+        for(int i =0; i< len-n+1; i++)
+        {
+            curr = curr.next;
+            System.out.println(curr.data)
+        }
+
+
+    }
+}
+
+
+
 
 
 
